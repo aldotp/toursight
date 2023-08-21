@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Update Staging server
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+    set -x && \
+    gcloud compute ssh toursight-server --zone=asia-southeast2-a --command='/bin/sh /home/c2312f2674/pull.sh'
